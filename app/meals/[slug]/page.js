@@ -3,7 +3,7 @@
 export default function MealContent() {
   return (
     <main>
-        <h1>Meal Title</h1>
+        <h1>Meal Details</h1>
 
        
         
