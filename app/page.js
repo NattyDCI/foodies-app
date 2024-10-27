@@ -6,7 +6,16 @@ export default function Home() {
       <h1 style={{ color: 'white', textAlign: 'center' }}>
         Time to get started!
       </h1>
-      <Link to="/meals" ></Link>
+      <div style={{diplay:"flex", flexDirection:"column"}}>
+        <p>
+          <Link style={{textDecoration:"none", color:"white"}} href="/meals" >Meals</Link>
+        </p>
+        <p>
+          <Link style={{textDecoration:"none", color:"white"}} href="/community" >Community</Link>
+        </p>
+      </div>
+     
+
     </main>
   );
 }
