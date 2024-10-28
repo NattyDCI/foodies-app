@@ -1,12 +1,18 @@
+import MealsGrid from "@/components/meals/meals-grid";
 import classes from "./page.module.css";
-import Link from "next/link"
+import Link from "next/link";
+import { getMeals } from "@/lib/meals";
 
-export default function MealsPage() {
+export default async function MealsPage() {
+  const meals = await getMeals();
+
+  
   return (
     <>
         <header className={classes.header}>
             <h1>Delicious meals, created <span className={classes.highlight}>by you</span> </h1>
             <p>Choose your favourite recipe and cook it yourself, it is easy and fun.</p>
+
             <p className={classes.cta}>
                 <Link href="/meals/share">
                     Share Your Favourite Recipe
@@ -15,8 +21,8 @@ export default function MealsPage() {
             </p>
         </header>
         <main className={classes.main}>
-            
-
+          {/* we have no meals yet, so we add an empty array */}
+            <MealsGrid meals={meals}/>
         </main>
     </>
   )
