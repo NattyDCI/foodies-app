@@ -1,12 +1,19 @@
 import Image from "next/image";
 import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
+import { notFound } from "next/navigation";
 
 
 export default function MealContent({params}) {
   const meal = getMeal(params.mealSlug);
-// i am using the regular expression wich is used for line breakes /\n/g to replace the line breakes for br tags 
-  meal.instructions = meal.instructions.replace(/\n/g, "<br />");
+  
+  if (!meal) {
+    notFound();
+    console.log("reaches this guy")
+  }
+  
+  // i am using the regular expression wich is used for line breakes /\n/g to replace the line breakes for br tags 
+    meal.instructions = meal.instructions.replace(/\n/g, "<br />");
  
   return (
     <>
