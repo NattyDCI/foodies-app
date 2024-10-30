@@ -4,7 +4,7 @@ import ImagePicker from '@/components/meals/image-picker';
 import classes from './page.module.css';
 import { shareMeal } from "@/lib/actions";
 import MealsFormSubmit from '@/components/meals/meals-form-submit';
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 
 export default function ShareMealPage() {
   // this hook is responsible for managing state forms that use server actions
@@ -12,7 +12,7 @@ export default function ShareMealPage() {
   // triggered when the form is submitted. The second argument is the initial state of this component  
   // normally takes the shape of the value that is returned from that action and that is an object
   
-  const [ state, formAction ] = useActionState(shareMeal, { message: null});
+  const [ state, formAction ] = useFormState(shareMeal, { message: null});
 
   
   return (
