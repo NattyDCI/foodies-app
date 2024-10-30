@@ -8,7 +8,7 @@ import { useActionState } from "react";
 
 export default function ShareMealPage() {
   // this hook is responsible for managing state forms that use server actions
-  //and this hooks takes in two arguments, the first is the server action that gets
+  // and this hooks takes in two arguments, the first is the server action that gets
   // triggered when the form is submitted. The second argument is the initial state of this component  
   // normally takes the shape of the value that is returned from that action and that is an object
   
